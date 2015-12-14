@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PebbleKitSportsAPIDemo</string>
+
+    <string name="label_launch">Launch</string>
+    <string name="button_launch_sports_label">Launch Sports</string>
+    <string name="button_launch_golf_label">Launch Golf</string>
+
+    <string name="label_configure_sports">Configure Sports</string>
+    <string name="label_configure_golf">Configure Golf</string>
+
+    <string name="button_dummy_data">Send dummy data</string>
+    <string name="units">Units: Metric</string>
+    <string name="pace">Pace or Speed: Pace</string>
+</resources>
