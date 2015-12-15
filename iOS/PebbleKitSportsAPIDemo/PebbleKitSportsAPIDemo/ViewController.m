@@ -46,6 +46,22 @@
     
     // Remember the connected watch
     self.watch = watch;
+    
+    [self.watch sportsAppAddReceiveUpdateHandler:^BOOL(PBWatch *watch, SportsAppActivityState state) {
+        // Display the new state of the watchapp
+        switch (state) {
+            case SportsAppActivityStateRunning:
+                NSLog(@"Watchapp now RUNNING.");
+                break;
+            case SportsAppActivityStatePaused:
+                NSLog(@"Watchapp now PAUSED.");
+                break;
+            default: break;
+        }
+        
+        // Finally
+        return YES;
+    }];
 }
 
 - (void)pebbleCentral:(PBPebbleCentral*)central watchDidDisconnect:(PBWatch*)watch {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PebbleKitSportsAPIDemo/ViewController.m"
-            timestampString = "471827158.428971"
+            timestampString = "471833264.436691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-sportsLaunchButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
