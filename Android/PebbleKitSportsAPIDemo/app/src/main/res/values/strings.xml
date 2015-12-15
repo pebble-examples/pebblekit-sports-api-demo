@@ -11,4 +11,7 @@
     <string name="button_dummy_data">Send dummy data</string>
     <string name="units">Units: Metric</string>
     <string name="pace">Pace or Speed: Pace</string>
+
+    <string name="label_status">Status</string>
+    <string name="status_none">None yet</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.pebble.pebblekitsportsapidemo;
 
+import android.content.Context;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +10,16 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.getpebble.android.kit.Constants;
 import com.getpebble.android.kit.PebbleKit;
 import com.getpebble.android.kit.util.PebbleDictionary;
 
 public class MainActivity extends AppCompatActivity {
+
+    private PebbleKit.PebbleDataReceiver mReceiver;
+    private TextView statusView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("PebbleKit Sports API Demo");
+
+        statusView = (TextView)findViewById(R.id.status);
 
         // Add Launch button listeners
         Button launchSports = (Button)findViewById(R.id.button_launch_sports);
@@ -116,4 +123,40 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Listen for button events
+        if(mReceiver == null) {
+            mReceiver = new PebbleKit.PebbleDataReceiver(Constants.SPORTS_UUID) {
+
+                @Override
+                public void receiveData(Context context, int id, PebbleDictionary data) {
+                    // Always ACKnowledge the last message to prevent timeouts
+                    PebbleKit.sendAckToPebble(getApplicationContext(), id);
+
+                    // Get action and display as Toast
+                    int state = data.getUnsignedIntegerAsLong(Constants.SPORTS_STATE_KEY).intValue();
+                    statusView.setText(
+                            (state == Constants.SPORTS_STATE_PAUSED ? "Resumed!" : "Paused!"));
+                }
+
+            };
+            PebbleKit.registerReceivedDataHandler(getApplicationContext(), mReceiver);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        try {
+            unregisterReceiver(mReceiver);
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            mReceiver = null;
+        }
+    }
 }
