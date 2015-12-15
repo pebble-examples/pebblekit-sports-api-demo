@@ -116,6 +116,29 @@
                                     <action selector="sportsDummyDataButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="elI-oV-0wt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoR-vi-fDY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3YI-Uc-6Oa"/>
+                                    <constraint firstAttribute="width" constant="167" id="ZIm-R8-78k"/>
+                                </constraints>
+                                <state key="normal" title="Send Dummy Data"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3YI-Uc-6Oa"/>
+                                        <exclude reference="ZIm-R8-78k"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3YI-Uc-6Oa"/>
+                                        <include reference="ZIm-R8-78k"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="golfDummyDataButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="SgW-5o-TlE"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LH-Rw-Iej">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -234,32 +257,54 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoR-vi-fDY">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-66-cu6">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3YI-Uc-6Oa"/>
-                                    <constraint firstAttribute="width" constant="167" id="ZIm-R8-78k"/>
+                                    <constraint firstAttribute="height" constant="21" id="GLb-Oa-oZ1"/>
+                                    <constraint firstAttribute="width" constant="92" id="g8a-cK-iOC"/>
                                 </constraints>
-                                <state key="normal" title="Send Dummy Data"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="3YI-Uc-6Oa"/>
-                                        <exclude reference="ZIm-R8-78k"/>
+                                        <exclude reference="GLb-Oa-oZ1"/>
+                                        <exclude reference="g8a-cK-iOC"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="3YI-Uc-6Oa"/>
-                                        <include reference="ZIm-R8-78k"/>
+                                        <include reference="GLb-Oa-oZ1"/>
+                                        <include reference="g8a-cK-iOC"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="golfDummyDataButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="SgW-5o-TlE"/>
-                                </connections>
-                            </button>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhD-WQ-dKP">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="1RD-P1-M4I"/>
+                                    <constraint firstAttribute="height" constant="21" id="bdI-3o-Xvb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1RD-P1-M4I"/>
+                                        <exclude reference="bdI-3o-Xvb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1RD-P1-M4I"/>
+                                        <include reference="bdI-3o-Xvb"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FhD-WQ-dKP" firstAttribute="leading" secondItem="brZ-66-cu6" secondAttribute="leading" id="4O3-Bf-Nb4"/>
                             <constraint firstItem="7LH-Rw-Iej" firstAttribute="top" secondItem="woZ-uN-bb4" secondAttribute="bottom" constant="42" id="4uK-av-k9F"/>
                             <constraint firstItem="nPo-L5-BKh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DUf-0U-hpP"/>
                             <constraint firstItem="CoR-vi-fDY" firstAttribute="baseline" secondItem="Rx6-ns-jtH" secondAttribute="baseline" id="EW2-zO-LHo"/>
@@ -273,7 +318,10 @@
                             <constraint firstItem="CoR-vi-fDY" firstAttribute="leading" secondItem="ySF-mM-PBH" secondAttribute="leading" id="Xpz-TB-a3V"/>
                             <constraint firstItem="BUp-DF-gDR" firstAttribute="leading" secondItem="9mo-X3-yYX" secondAttribute="leading" id="YrB-Pq-AVi"/>
                             <constraint firstItem="9mo-X3-yYX" firstAttribute="leading" secondItem="7LH-Rw-Iej" secondAttribute="trailing" constant="50" id="aCo-Tg-Mdv"/>
+                            <constraint firstItem="FhD-WQ-dKP" firstAttribute="top" secondItem="brZ-66-cu6" secondAttribute="bottom" constant="22" id="eDT-7a-twg"/>
+                            <constraint firstItem="brZ-66-cu6" firstAttribute="top" secondItem="Rx6-ns-jtH" secondAttribute="bottom" constant="33" id="eUC-ca-lta"/>
                             <constraint firstItem="9iL-ks-9Nm" firstAttribute="top" secondItem="PjC-Lz-KBi" secondAttribute="bottom" constant="77" id="fXZ-L6-FL0"/>
+                            <constraint firstItem="brZ-66-cu6" firstAttribute="leading" secondItem="Rx6-ns-jtH" secondAttribute="leading" id="fbd-Se-L08"/>
                             <constraint firstItem="PjC-Lz-KBi" firstAttribute="top" secondItem="7LH-Rw-Iej" secondAttribute="bottom" constant="42" id="i57-Au-piz"/>
                             <constraint firstItem="PjC-Lz-KBi" firstAttribute="leading" secondItem="7LH-Rw-Iej" secondAttribute="leading" id="n14-mT-l6r"/>
                             <constraint firstItem="ySF-mM-PBH" firstAttribute="leading" secondItem="woZ-uN-bb4" secondAttribute="trailing" constant="45" id="pd0-p8-UjH">
@@ -289,12 +337,14 @@
                                 <exclude reference="woZ-uN-bb4"/>
                                 <exclude reference="Rx6-ns-jtH"/>
                                 <exclude reference="ySF-mM-PBH"/>
+                                <exclude reference="CoR-vi-fDY"/>
                                 <exclude reference="7LH-Rw-Iej"/>
                                 <exclude reference="9mo-X3-yYX"/>
                                 <exclude reference="PjC-Lz-KBi"/>
                                 <exclude reference="BUp-DF-gDR"/>
                                 <exclude reference="9iL-ks-9Nm"/>
-                                <exclude reference="CoR-vi-fDY"/>
+                                <exclude reference="brZ-66-cu6"/>
+                                <exclude reference="FhD-WQ-dKP"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="DUf-0U-hpP"/>
@@ -317,6 +367,10 @@
                                 <exclude reference="RIM-pu-dqb"/>
                                 <exclude reference="EW2-zO-LHo"/>
                                 <exclude reference="Xpz-TB-a3V"/>
+                                <exclude reference="eUC-ca-lta"/>
+                                <exclude reference="fbd-Se-L08"/>
+                                <exclude reference="4O3-Bf-Nb4"/>
+                                <exclude reference="eDT-7a-twg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -325,12 +379,14 @@
                                 <include reference="woZ-uN-bb4"/>
                                 <include reference="Rx6-ns-jtH"/>
                                 <include reference="ySF-mM-PBH"/>
+                                <include reference="CoR-vi-fDY"/>
                                 <include reference="7LH-Rw-Iej"/>
                                 <include reference="9mo-X3-yYX"/>
                                 <include reference="PjC-Lz-KBi"/>
                                 <include reference="BUp-DF-gDR"/>
                                 <include reference="9iL-ks-9Nm"/>
-                                <include reference="CoR-vi-fDY"/>
+                                <include reference="brZ-66-cu6"/>
+                                <include reference="FhD-WQ-dKP"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="DUf-0U-hpP"/>
@@ -353,6 +409,10 @@
                                 <include reference="RIM-pu-dqb"/>
                                 <include reference="EW2-zO-LHo"/>
                                 <include reference="Xpz-TB-a3V"/>
+                                <include reference="eUC-ca-lta"/>
+                                <include reference="fbd-Se-L08"/>
+                                <include reference="4O3-Bf-Nb4"/>
+                                <include reference="eDT-7a-twg"/>
                             </mask>
                         </variation>
                     </view>
@@ -363,6 +423,7 @@
                         <outlet property="paceSpeedControl" destination="BUp-DF-gDR" id="Cbe-RW-mAg"/>
                         <outlet property="sportsDummyDataButton" destination="ySF-mM-PBH" id="fai-hH-biO"/>
                         <outlet property="sportsLaunchButton" destination="woZ-uN-bb4" id="uHf-Vd-W7A"/>
+                        <outlet property="statusLabel" destination="FhD-WQ-dKP" id="OUu-Ir-o0p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

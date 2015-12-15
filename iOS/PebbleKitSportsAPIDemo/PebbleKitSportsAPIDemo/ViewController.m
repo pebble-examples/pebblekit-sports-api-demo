@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *paceSpeedControl;
 @property (weak, nonatomic) IBOutlet UIButton *golfLaunchButton;
 @property (weak, nonatomic) IBOutlet UIButton *golfDummyDataButton;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property PBWatch *watch;
 @property PBPebbleCentral *central;
 
@@ -51,10 +52,10 @@
         // Display the new state of the watchapp
         switch (state) {
             case SportsAppActivityStateRunning:
-                NSLog(@"Watchapp now RUNNING.");
+                self.statusLabel.text = @"Watchapp now running.";
                 break;
             case SportsAppActivityStatePaused:
-                NSLog(@"Watchapp now PAUSED.");
+                self.statusLabel.text = @"Watchapp now paused.";
                 break;
             default: break;
         }
