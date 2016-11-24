@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4D2B6C591A45EEDF8E527A /* Pods_PebbleKitSportsAPIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CEB3F896CC8CBB25747A01 /* Pods_PebbleKitSportsAPIDemo.framework */; };
 		6EC1B5DE1C1F5544008A9C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC1B5DD1C1F5544008A9C4D /* main.m */; };
 		6EC1B5E11C1F5544008A9C4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC1B5E01C1F5544008A9C4D /* AppDelegate.m */; };
 		6EC1B5E41C1F5544008A9C4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC1B5E31C1F5544008A9C4D /* ViewController.m */; };
 		6EC1B5E71C1F5544008A9C4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC1B5E51C1F5544008A9C4D /* Main.storyboard */; };
 		6EC1B5E91C1F5544008A9C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EC1B5E81C1F5544008A9C4D /* Assets.xcassets */; };
 		6EC1B5EC1C1F5544008A9C4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC1B5EA1C1F5544008A9C4D /* LaunchScreen.storyboard */; };
-		D6A77839C5A996A54BB431AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF95C5C307E169A491203B6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C9CCFFC410E2C953F518FE7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		62F7DAA83CA77F3EE3AA4501 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3446526ECCF3D36A2E56F0ED /* Pods-PebbleKitSportsAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleKitSportsAPIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleKitSportsAPIDemo/Pods-PebbleKitSportsAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6EC1B5D91C1F5544008A9C4D /* PebbleKitSportsAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PebbleKitSportsAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC1B5DD1C1F5544008A9C4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6EC1B5DF1C1F5544008A9C4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,7 +28,8 @@
 		6EC1B5E81C1F5544008A9C4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EC1B5EB1C1F5544008A9C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EC1B5ED1C1F5544008A9C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EF95C5C307E169A491203B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CEB3F896CC8CBB25747A01 /* Pods_PebbleKitSportsAPIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PebbleKitSportsAPIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5C4B067BA12157AD7DF0E86 /* Pods-PebbleKitSportsAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleKitSportsAPIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleKitSportsAPIDemo/Pods-PebbleKitSportsAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,26 +37,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A77839C5A996A54BB431AF /* libPods.a in Frameworks */,
+				4B4D2B6C591A45EEDF8E527A /* Pods_PebbleKitSportsAPIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E6442E5DAF962B8D2797869 /* Pods */ = {
+		5AFB5661504C5869F4570BF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				62F7DAA83CA77F3EE3AA4501 /* Pods.debug.xcconfig */,
-				5C9CCFFC410E2C953F518FE7 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		58112C1791CF7029B50AA1CA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9EF95C5C307E169A491203B6 /* libPods.a */,
+				B9CEB3F896CC8CBB25747A01 /* Pods_PebbleKitSportsAPIDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -66,8 +57,8 @@
 			children = (
 				6EC1B5DB1C1F5544008A9C4D /* PebbleKitSportsAPIDemo */,
 				6EC1B5DA1C1F5544008A9C4D /* Products */,
-				3E6442E5DAF962B8D2797869 /* Pods */,
-				58112C1791CF7029B50AA1CA /* Frameworks */,
+				84FC9757DD83220DF9B15611 /* Pods */,
+				5AFB5661504C5869F4570BF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +94,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		84FC9757DD83220DF9B15611 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3446526ECCF3D36A2E56F0ED /* Pods-PebbleKitSportsAPIDemo.debug.xcconfig */,
+				C5C4B067BA12157AD7DF0E86 /* Pods-PebbleKitSportsAPIDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,12 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6EC1B5F01C1F5544008A9C4D /* Build configuration list for PBXNativeTarget "PebbleKitSportsAPIDemo" */;
 			buildPhases = (
-				94BD450A3ECB5898A4E19BB9 /* Check Pods Manifest.lock */,
+				A69D66A1698EA640155506A7 /* [CP] Check Pods Manifest.lock */,
 				6EC1B5D51C1F5544008A9C4D /* Sources */,
 				6EC1B5D61C1F5544008A9C4D /* Frameworks */,
 				6EC1B5D71C1F5544008A9C4D /* Resources */,
-				033433136ED9C55A33F479FE /* Embed Pods Frameworks */,
-				778367839293873B8DA18229 /* Copy Pods Resources */,
+				0D67F72B31E0539022BF7F31 /* [CP] Embed Pods Frameworks */,
+				B17512F3024577673B7065AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,12 +132,16 @@
 		6EC1B5D11C1F5544008A9C4D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Pebble;
 				TargetAttributes = {
 					6EC1B5D81C1F5544008A9C4D = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = GX7C5YQE53;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -173,49 +177,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		033433136ED9C55A33F479FE /* Embed Pods Frameworks */ = {
+		0D67F72B31E0539022BF7F31 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PebbleKitSportsAPIDemo/Pods-PebbleKitSportsAPIDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		778367839293873B8DA18229 /* Copy Pods Resources */ = {
+		A69D66A1698EA640155506A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		94BD450A3ECB5898A4E19BB9 /* Check Pods Manifest.lock */ = {
+		B17512F3024577673B7065AD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PebbleKitSportsAPIDemo/Pods-PebbleKitSportsAPIDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -266,8 +270,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -309,8 +315,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -335,7 +343,7 @@
 		};
 		6EC1B5F11C1F5544008A9C4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62F7DAA83CA77F3EE3AA4501 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 3446526ECCF3D36A2E56F0ED /* Pods-PebbleKitSportsAPIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -351,7 +359,7 @@
 		};
 		6EC1B5F21C1F5544008A9C4D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C9CCFFC410E2C953F518FE7 /* Pods.release.xcconfig */;
+			baseConfigurationReference = C5C4B067BA12157AD7DF0E86 /* Pods-PebbleKitSportsAPIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
