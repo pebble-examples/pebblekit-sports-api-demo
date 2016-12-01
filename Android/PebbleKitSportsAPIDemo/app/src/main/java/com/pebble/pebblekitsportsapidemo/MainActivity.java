@@ -65,11 +65,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final long startTime = System.currentTimeMillis();
+                currentState.setCustomLabel("Accel (in mG)");
+
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         double time = (double)(System.currentTimeMillis() - startTime) / 1000;
-                        float accel = (float)Math.abs(-0.01 * Math.sin(time / 10) * 102);
 
                         currentState.setTimeInSec((int)time);
                         currentState.setDistance((float)(1.5 * time + Math.sin(time / 10)) / 1000);
@@ -79,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             currentState.setSpeed((float)(15 + Math.cos(time/10))/10 * (3600/1000));
                         }
-                        currentState.setCustomLabel("Accel (in mG)");
+
+                        float accel = (float)Math.abs(-0.01 * Math.sin(time / 10) * 102);
                         currentState.setCustomValue(String.format("%.3f", accel));
                         currentState.synchronize(getApplicationContext());
                         handler.postDelayed(this, 1000);
