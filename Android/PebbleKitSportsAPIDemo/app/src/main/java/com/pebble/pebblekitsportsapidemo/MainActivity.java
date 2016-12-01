@@ -4,22 +4,27 @@ import android.content.Context;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.Date;
 
 import com.getpebble.android.kit.Constants;
 import com.getpebble.android.kit.PebbleKit;
 import com.getpebble.android.kit.util.PebbleDictionary;
+import com.getpebble.android.kit.util.SportsState;
 
 public class MainActivity extends AppCompatActivity {
 
     private PebbleKit.PebbleDataReceiver mReceiver;
     private TextView statusView;
+    private Handler handler = new Handler();
+    private boolean displayPace = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("PebbleKit Sports API Demo");
 
-        statusView = (TextView)findViewById(R.id.status);
+        final SportsState currentState = new SportsState();
+
+        statusView = (TextView) findViewById(R.id.status);
 
         // Add Launch button listeners
-        Button launchSports = (Button)findViewById(R.id.button_launch_sports);
+        Button launchSports = (Button) findViewById(R.id.button_launch_sports);
         launchSports.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -41,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        Button launchGolf = (Button)findViewById(R.id.button_launch_golf);
+        Button launchGolf = (Button) findViewById(R.id.button_launch_golf);
         launchGolf.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -52,21 +59,37 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Add Configure Sports button listeners
-        final Button sportsDummyData = (Button)findViewById(R.id.dummy_data_sports);
+        final Button sportsDummyData = (Button) findViewById(R.id.dummy_data_sports);
         sportsDummyData.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // Send some dummy data
-                PebbleDictionary out = new PebbleDictionary();
-                out.addString(Constants.SPORTS_TIME_KEY, "12:52");
-                out.addString(Constants.SPORTS_DISTANCE_KEY, "23.8");
-                PebbleKit.sendDataToPebble(getApplicationContext(), Constants.SPORTS_UUID, out);
+                final long startTime = System.currentTimeMillis();
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        double time = (double)(System.currentTimeMillis() - startTime) / 1000;
+                        float accel = (float)Math.abs(-0.01 * Math.sin(time / 10) * 102);
+
+                        currentState.setTimeInSec((int)time);
+                        currentState.setDistance((float)(1.5 * time + Math.sin(time / 10)) / 1000);
+                        currentState.setHeartBPM((byte)(90 + Math.sin(time / 10) * 30));
+                        if (displayPace) {
+                            currentState.setPaceInSec((int)((10 / (15 + Math.cos(time / 10))) * 1000));
+                        } else {
+                            currentState.setSpeed((float)(15 + Math.cos(time/10))/10 * (3600/1000));
+                        }
+                        currentState.setCustomLabel("Accel (in mG)");
+                        currentState.setCustomValue(String.format("%.3f", accel));
+                        currentState.synchronize(getApplicationContext());
+                        handler.postDelayed(this, 1000);
+                    }
+                });
             }
 
         });
 
-        final Switch sportsUnits = (Switch)findViewById(R.id.switch_sports_units);
+        final Switch sportsUnits = (Switch) findViewById(R.id.switch_sports_units);
         sportsUnits.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
@@ -74,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 // Switch units
                 sportsUnits.setText("Units: " + (isChecked ? "Metric" : "Imperial"));
 
-                byte value = (byte)(isChecked ?
+                byte value = (byte) (isChecked ?
                         Constants.SPORTS_UNITS_METRIC : Constants.SPORTS_UNITS_IMPERIAL);
 
                 // Update watchapp
@@ -85,27 +108,20 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        final Switch sportsPace = (Switch)findViewById(R.id.switch_sports_pace);
+        final Switch sportsPace = (Switch) findViewById(R.id.switch_sports_pace);
         sportsPace.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Switch units
+                // Switch metric
                 sportsPace.setText("Pace or Speed: " + (isChecked ? "Speed" : "Pace"));
-
-                byte value = (byte)(isChecked ?
-                        Constants.SPORTS_DATA_SPEED : Constants.SPORTS_DATA_PACE);
-
-                // Update watchapp
-                PebbleDictionary out = new PebbleDictionary();
-                out.addUint8(Constants.SPORTS_LABEL_KEY, value);
-                PebbleKit.sendDataToPebble(getApplicationContext(), Constants.SPORTS_UUID, out);
+                displayPace = !isChecked;
             }
 
         });
 
         // Add Configure Golf button listeners
-        final Button golfDummyData = (Button)findViewById(R.id.dummy_data_golf);
+        final Button golfDummyData = (Button) findViewById(R.id.dummy_data_golf);
         golfDummyData.setOnClickListener(new View.OnClickListener() {
 
             @Override
